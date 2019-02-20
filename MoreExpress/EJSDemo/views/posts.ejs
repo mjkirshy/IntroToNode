@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<h1>This is the post page</h1>
+
+<% for(var i =0; i < posts.length; i++){ %>
+<li>
+    <%= posts[i].title %> - <%= posts[i].author %>
+</li>
+<% } %>
+
+<% posts.forEach(function(posts){ %>
+<li>
+    <%= posts.title %> - <%= posts.author %>
+</li>
+<% }) %>
+
+<form action="/addauthor" method="POST">
+    <input type="text" name="postsPost" placeholder="post">
+    <input type="text" name="authorPost" placeholder="author">
+    <button>Submit</button>
+</form>
+
+<% include partials/footer %>
